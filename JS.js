@@ -1,4 +1,4 @@
-function gerarCorAleatoriaExcluindo(coresExcluidas) {
+function gerarCorAleatoriaExcluindo() {
     var letras = '0123456789ABCDEF';
     var cor;
     do {
@@ -11,8 +11,8 @@ function gerarCorAleatoriaExcluindo(coresExcluidas) {
     return cor;
 }
 
-function alterarCorDeFundoDoCabecalho() {;
-    var cor = gerarCorAleatoriaExcluindo(coresExcluidas);
+function alterarCorDeFundoDoCabecalho() {
+    var cor = gerarCorAleatoriaExcluindo();
     var cabecalho = document.querySelector('header');
     if (cabecalho) {
         cabecalho.style.backgroundColor = cor;
