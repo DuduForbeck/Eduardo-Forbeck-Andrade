@@ -17,5 +17,4 @@ function alterarCorDeFundoDoCabecalho() {
         console.error('Elemento de cabeçalho não encontrado');
     }
 }
-
 window.onload = alterarCorDeFundoDoCabecalho;
