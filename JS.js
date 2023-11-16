@@ -1,4 +1,3 @@
-// Função para gerar uma cor aleatória
 function gerarCorAleatoria() {
     var letras = '0123456789ABCDEF';
     var cor = '#';
@@ -8,7 +7,7 @@ function gerarCorAleatoria() {
     return cor;
 }
 
-// Função para alterar a cor de fundo do cabeçalho
+
 function alterarCorDeFundoDoCabecalho() {
     var cor = gerarCorAleatoria();
     var cabecalho = document.querySelector('header');
@@ -19,5 +18,4 @@ function alterarCorDeFundoDoCabecalho() {
     }
 }
 
-// Chamar a função quando a página é carregada
 window.onload = alterarCorDeFundoDoCabecalho;
