@@ -6,13 +6,13 @@ function gerarCorAleatoriaExcluindo(coresExcluidas) {
         for (var i = 0; i < 6; i++) {
             cor = cor + letras[Math.floor(Math.random() * 16)];
         }
-    } while (coresExcluidas.includes(cor));
+    } while (coresExcluidas.includes(cor) || cor === '#FFF');
 
     return cor;
 }
 
 function alterarCorDeFundoDoCabecalho() {
-    var coresExcluidas = ['#262bbd'];
+    var coresExcluidas = ['#262bbd', '#FFF'];
     var cor = gerarCorAleatoriaExcluindo(coresExcluidas);
     var cabecalho = document.querySelector('header');
     if (cabecalho) {
