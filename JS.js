@@ -1,15 +1,19 @@
-function gerarCorAleatoria() {
+function gerarCorAleatoriaExcluindo(coresExcluidas) {
     var letras = '0123456789ABCDEF';
-    var cor = '#';
-    for (var i = 0; i < 6; i++) {
-        cor += letras[Math.floor(Math.random() * 16)];
-    }
+    var cor;
+    do {
+        cor = '#';
+        for (var i = 0; i < 6; i++) {
+            cor = cor + letras[Math.floor(Math.random() * 16)];
+        }
+    } while (coresExcluidas.includes(cor));
+
     return cor;
 }
 
-
 function alterarCorDeFundoDoCabecalho() {
-    var cor = gerarCorAleatoria();
+    var coresExcluidas = ['#262bbd'];
+    var cor = gerarCorAleatoriaExcluindo(coresExcluidas);
     var cabecalho = document.querySelector('header');
     if (cabecalho) {
         cabecalho.style.backgroundColor = cor;
@@ -17,4 +21,5 @@ function alterarCorDeFundoDoCabecalho() {
         console.error('Elemento de cabeçalho não encontrado');
     }
 }
+
 window.onload = alterarCorDeFundoDoCabecalho;
